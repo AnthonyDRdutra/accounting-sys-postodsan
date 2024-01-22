@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+
+    <script src="jquery3.7.1.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+
+    <style>
+
+        table {
+            border-spacing: 10px;
+        }
+        th, td{
+            border: none;
+            padding: 8px;
+        }
+        div{
+            border: 0px solid #0FFF50;
+        }
+
+        body {
+            padding-top: 56px; /* Adjusted for the fixed navbar */
+            background-color: #353a4a;
+        }
+        hr {
+            border: 1;
+            clear:both;
+            display: flex;
+            width: 100%;
+            background-color: #969696;
+            height: 0px;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    <a href='/Include/Signupform.php'>Voltar</a>
+    <div class='row container-fluid'>
+        <div class=" mt-2 col container-fluid" style="max-width: 550px">
+
+
+            <!--Tabela de Débitos-->
+            <div class ="ml-2 mr-3 bg-warning text-info text-center bg-info rounded" style="min-width: 500px">
+                <h4>Débitos</h4>
+            </div>
+            <table class=" table-hover ml-2 bg-warning rounded" style="min-width: 500px">
+                <th class="text-center">Nome</th>
+                <th class="text-center">Valor</th>
+                <th class="text-center">Data e Hora</th>
+                <th class="text-center">Responsável</th>
+                <th class="text-center">Ações</th>
+
+                            </table>
+        </div>
+
+        <!--Tabela de Pagamentos-->
+        <div class="mt-2 col container-fluid" style="max-width: 550px">
+            <div  class ="ml-2 mr-3 text-center text-warning bg-info rounded" style="min-width: 500px">
+                <h4>Adiantamentos</h4>
+            </div>
+            <table class="table-hover ml-2 bg-info rounded" style="min-width: 500px">
+                <th class="text-center">Nome</th>
+                <th class="text-center">Valor</th>
+                <th class="text-center">Data e Hora</th>
+                <th class="text-center">Responsável</th>
+                <th class="text-center">Ações</th>
+
+                            </table>
+        </div>
+
+
+        <!--Tabela de metricas-->
+        <div class="col container align-content-Left mt-2 text-white " style="max-width: 550px;max-height: 100px">
+            <div class="text-white col mb-1" align="center" >
+               <h2> <br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Undefined variable $selectedClient in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>134</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Trying to access array offset on value of type null in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>134</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+ </h2>
+            </div>
+            <table>
+                                <tr>
+                    <td class="text-center font-weight-bold"> <h2>Débitos</h2>R$ 0                        <hr></td>
+
+                    <td class="text-center font-weight-bold"> <h2>Adiantamentos</h2>R$ 0                        <hr></td>
+
+                    <td class="text-center font-weight-bold"><h2>Restante</h2> R$ 0                        <hr></td>
+
+                            </table>
+            <div class="col border-white rounded bg-dark mt-3">
+
+
+
+                <!--Card de Cadastro de pagamentos-->
+                <div>
+                    <h4>Cadastrar Pagamento</h4>
+                    <hr>
+                </div>
+                <div class="col mt-3">
+                    <div class="card card-body bg-success mt-1">
+                        <div class="row mb-1 h-auto w-auto" align="center" >
+                            <input type="text" name="client_name_input_payment" id="client_name_input_payment" class="container form-control input-group-lg" autocomplete="off" placeholder="Nome do Cliente..." value="<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Undefined variable $selectedClient in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>162</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Trying to access array offset on value of type null in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>162</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+" readonly>
+                        </div>
+                        <div class="row mt-1 mb-1 h-auto w-auto text-white">
+                            <input type="number" name="input_value_payment" id="input_value_payment" class="container form-control" placeholder="Valor (R$)...">
+                        </div>
+                        <div class="row mt-1 mb-1 h-auto w-auto">
+                            <label for="dropdown" class="text-white">Responsável:</label>
+                            <select class="form-control" id="dropdown" name="atendee_payment">
+                                                            </select>
+                        </div>
+                    </div>
+                    <div class="col mt-1 mb-1" align="center">
+                        <button type="submit" class="btn btn-info" style="min-width: 250px; max-height: 40px;" id="btn_store_payment">
+                            <img src="assets/save.png" height="20" width="20">
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!--Card de Cadastro de Débitos-->
+                <div class="col mt-3">
+                    <div>
+                        <h4>Cadastrar Débito</h4>
+                        <hr>
+                    </div>
+
+                    <div class="card card-body bg-success mt-1">
+                        <div class="row mb-1 h-auto w-auto" align="center" >
+                            <input type="text" name="client_name_input" id="client_name_input" class="container form-control input-group-lg" autocomplete="off" placeholder="Nome do Cliente..." value="<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Undefined variable $selectedClient in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>196</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Trying to access array offset on value of type null in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>196</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+" readonly>
+                        </div>
+                        <div class="row mt-1 mb-1 h-auto w-auto text-white">
+                            <input type="number" name="input_value" id="input_value" class="container form-control" placeholder="Valor (R$)...">
+                        </div>
+                        <div class="row mt-1 mb-1 h-auto w-auto">
+                            <label for="dropdown" class="text-white">Responsável:</label>
+                            <select class="form-control" id="dropdown" name="atendee">
+                                                            </select>
+                        </div>
+                    </div>
+                        <div class="col mt-1 mb-1" align="center">
+                            <button type="submit" class="btn btn-info" style="min-width: 250px; max-height: 40px;" id="btn_store">
+                                <img src="assets/save.png" height="20" width="20">
+                            </button>
+                        </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<!--Ajax scripts-->
+<script>
+    $(document).ready(function () {
+
+        //AJAX Delete debt ticket
+        $('.delete-debtticket').on('click', function (event) {
+            event.preventDefault();
+
+            var paymentId = $(this).data('id');
+
+            // AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'Delete_debt.php',
+                data: { id: paymentId },
+                success: function (response) {
+                    console.log(response);
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        });
+
+        //AJAX delete payment ticket
+        $('.delete-paymentticket').on('click', function (event) {
+            event.preventDefault();
+
+            var paymentId = $(this).data('id');
+
+            // AJAX request
+            $.ajax({
+                type: 'POST',
+                url: 'Delete_payment.php',
+                data: { id: paymentId },
+                success: function (response) {
+                    console.log(response);
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        });
+
+        //AJAX store debt and create client
+        $("#btn_store").on("click", function(event){
+            //event.preventDefault();
+
+            $('form').append('<input type="hidden" name="books_id" value="<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Undefined variable $selectedClient in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>276</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Trying to access array offset on value of type null in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>276</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+">');
+
+            $.ajax({
+                url: "singup_logic.php",
+                method:"post",
+                data: $('form').serialize(),
+                dataType: "text",
+                success: function (response) {
+                    console.log(response); // Log the response for debugging
+                    $('form')[0].reset();
+                    console.log("Form cleared");
+                }
+            })
+        })
+
+        //AJAX Store payment
+        $("#btn_store_payment").on("click", function(event){
+            event.preventDefault();
+
+            $('form').append('<input type="hidden" name="books_id" value="<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Undefined variable $selectedClient in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>295</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Trying to access array offset on value of type null in C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php on line <i>295</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>441064</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\phpdesktop-chrome-57.0-rc-php-8\www\Include\clientdata.php' bgcolor='#eeeeec'>...\clientdata.php<b>:</b>0</td></tr>
+</table></font>
+">');
+
+            $.ajax({
+                url: "singup_payment_logic.php",
+                method:"post",
+                data: $('form').serialize(),
+                dataType: "text",
+                success: function (response) {
+                    console.log(response); // Log the response for debugging
+                    // $('form')[0].reset();
+                    console.log("Form cleared");
+                    location.reload();
+                }
+            })
+
+        })
+    });
+</script>
+
+</body>

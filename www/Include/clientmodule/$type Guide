@@ -1,0 +1,5 @@
+guide for $type var in ticketlist function on switch case
+
+0 = debt listing from client_debt table;
+1 = payment listing from client_payment table;
+2 = client book listing from client_books table;
