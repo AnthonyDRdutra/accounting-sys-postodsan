@@ -1,6 +1,6 @@
 <?php
 include "CRUD_logic.php";
-$list = new \Include\clientmodule\CRUD_logic();
+$list = new \Include\CRUD_logic();
 ?>
 
 <head title="Cadastro de Débito">
@@ -74,13 +74,10 @@ $list = new \Include\clientmodule\CRUD_logic();
     </script>
 
     <style>
-        div{
-            border: 0px solid #0FFF50;
-        }
 
         body {
-            padding: 20px; /* Adjusted for the fixed navbar */
-            background-color: #F2F2F2;
+            font-family: "Lucida Console", monospace;
+            background-color:black;
         }
         hr {
             border: 0px;
@@ -103,10 +100,10 @@ $list = new \Include\clientmodule\CRUD_logic();
 
                 <!--Live search-->
 
-                <div class=" container-fluid card card-body norounded border-dark bg-custom1 text-dark  mt-1" style="min-width: 550px;">
+                <div class=" container-fluid card card-body border-white border-dark bg-dark text-primary  mt-1" style="min-width: 550px;">
                     <div class='row'>
-                        <div class="col-5">
-                            <input class="mb-1 container bg-dark text-white norounded form-control mr-sm-2 " type="live_search" id="live_search" name="search" placeholder="Pesquisa de Cliente" style="max-width: fit-content">
+                        <div class="col-5">Pesquisa de Cliente
+                            <input class="bg-dark border-white text-primary form-control" type="live_search" id="live_search" name="search" style="max-width: fit-content; text-decoration-color: white" placeholder="nome do cliente...">
 
                             <!--livesearch-->
                             <div class="container-fluid" id="search_result" style="min-width: 550px;">
@@ -122,93 +119,81 @@ $list = new \Include\clientmodule\CRUD_logic();
             <!--Card de Cadastro de Débito-->
             <div class="col mt-1" align="Left">
                 <p style="max-height: 24px" align="Left">
-                    <button class="btn btn-dark norounded ml-0" style="width: fit-content; height: auto" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-dark border-white ml-0" style="width: fit-content; height: auto" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Cadastrar Débito
                     </button>
                 </p>
 
-                <div class="collapse container-fluid" id="collapseExample">
-                    <div class="card card-body norounded bg-danger mt-1">
+                <div class="collapse row" style="width: fit-content" id="collapseExample">
 
-                        <div class="row mb-1 h-auto w-auto" align="center" >
-                            <input type="text" name="client_name_input" id="client_name_input" class="container norounded form-control input-group-lg" autocomplete="off" placeholder="Nome do Cliente...">
+                    <div class="col text-primary"> ///Débito////
+                        <div class="card card-body border-white bg-dark mt-1">
+                            <div class="row mb-1 h-auto w-auto" align="center" >
+                                <input type="text" name="client_name_input" id="client_name_input" class="container bg-dark border-white text-primary form-control input-group-lg" autocomplete="off" placeholder="Nome do Cliente...">
+                            </div>~~~~
+
+                            <div class="row mt-1 mb-1 h-auto w-auto text-primary">
+                                <input type="number" name="input_value" id="input_value" class="container bg-dark border-white text-primary form-control" placeholder="Valor (R$)...">
+                            </div>~~~~
+
+                            <div class="row mt-1 mb-1 h-auto w-auto">
+                                <label for="dropdown" class="text-primary">Responsável:</label>
+                                <select class="form-control border-white bg-dark text-primary" id="dropdown" name="atendee">
+                                    <?php
+                                    foreach($list->Attendeelist() as $dbpostodsan):
+                                        $atendeename = $dbpostodsan['atendee_name'];
+                                        echo "<option value='" . htmlspecialchars($atendeename). "' id='atendee" . "' name='atendee'>" . htmlspecialchars($atendeename) . "</option>";
+                                    endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col mt-1 mb-1" align="center">
+                                <button type="submit" class="btn btn-danger border-white" style="min-width: 250px; max-height: 40px;" id="btn_store">
+                                    salvar
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="row mt-1 mb-1 h-auto w-auto text-white">
-                            <input type="number" name="input_value" id="input_value" class="container norounded form-control" placeholder="Valor (R$)...">
-                        </div>
-
-                        <div class="row mt-1 mb-1 h-auto w-auto">
-                            <label for="dropdown" class="text-white">Responsável:</label>
-                            <select class="form-control norounded" id="dropdown" name="atendee">
-                                <?php
-                                foreach($list->Attendeelist() as $dbpostodsan):
-                                    $atendeename = $dbpostodsan['atendee_name'];
-                                    echo "<option value='" . htmlspecialchars($atendeename). "' id='atendee" . "' name='atendee'>" . htmlspecialchars($atendeename) . "</option>";
-                                endforeach; ?>
-                            </select>
-                        </div>
                     </div>
 
-                    <div class="col mt-1 mb-1" align="center">
-                        <button type="submit" class="btn btn-info norounded" style="min-width: 250px; max-height: 40px;" id="btn_store">
-                            <img src="assets/save.png" height="20" width="20">
-                        </button>
-                    </div>
 
+                    <div class="col text-primary">///Pagamento///
+                        <div class="card card-body bg-dark border-white mt-1">
+                            <div class="row mb-1 h-auto w-auto" align="center" >
+                                <input type="text" name="client_name_input_payment" id="client_name_input_payment" class="container border-white form-control bg-dark text-primary input-group-lg" autocomplete="off" placeholder="Nome do Cliente...">
+                            </div>~~~~
+
+                            <div class="row mt-1 mb-1 h-auto w-auto text-primary">
+                                <input type="number" name="input_value_payment" id="input_value_payment" class="container bg-dark border-white form-control" placeholder="Valor (R$)..." style="color: #fff;">
+                            </div>~~~~
+
+                            <div class="row mt-1 mb-1 h-auto w-auto">
+                                <label for="dropdown" class="text-primary bg-dark text-primary">Responsável:</label>
+                                <select class="form-control border-white bg-dark text-primary" id="dropdown" name="atendee_payment">
+                                    <?php
+                                    foreach($list->Attendeelist() as $dbpostodsan):
+                                        $atendeename = $dbpostodsan['atendee_name'];
+                                        echo "<option value='" . htmlspecialchars($atendeename). "' id='atendee" . "' name='atendee'>" . htmlspecialchars($atendeename) . "</option>";
+                                    endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="col mt-1 mb-1" align="center">
+                                <button type="submit" class="btn btn-info border-white" style="min-width: 250px; max-height: 40px;" id="btn_store_payment">
+                                    salvar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!--Card de Cadrastro de Pagamento-->
-            <div class="col mt-1" align="Left">
-
-                <p style="max-height: 24px" align="Left">
-                    <button class="btn btn-dark norounded ml-0" style="width: fit-content; height: auto" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                        Cadastrar Pagamento
-                    </button>
-                </p>
-
-                <div class="collapse container-fluid" id="collapseExample3">
-                    <div class="card card-body bg-success norounded mt-1">
-
-                        <div class="row mb-1 h-auto w-auto" align="center" >
-                            <input type="text" name="client_name_input_payment" id="client_name_input_payment" class="container norounded form-control input-group-lg" autocomplete="off" placeholder="Nome do Cliente...">
-                        </div>
-
-                        <div class="row mt-1 mb-1 h-auto w-auto text-white">
-                            <input type="number" name="input_value_payment" id="input_value_payment" class="container norounded form-control" placeholder="Valor (R$)...">
-                        </div>
-
-                        <div class="row mt-1 mb-1 h-auto w-auto">
-                            <label for="dropdown" class="text-white">Responsável:</label>
-                            <select class="form-control norounded" id="dropdown" name="atendee_payment">
-                                <?php
-                                foreach($list->Attendeelist() as $dbpostodsan):
-                                    $atendeename = $dbpostodsan['atendee_name'];
-                                    echo "<option value='" . htmlspecialchars($atendeename). "' id='atendee" . "' name='atendee'>" . htmlspecialchars($atendeename) . "</option>";
-                                endforeach; ?>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="col mt-1 mb-1" align="center">
-                        <button type="submit" class="btn btn-info norounded" style="min-width: 250px; max-height: 40px;" id="btn_store_payment">
-                            <img href="#" src="assets/save.png" height="20" width="20">
-                        </button>
-                    </div>
-
-                </div>
-
             </div>
         </div>
         <hr>
 
         <!--dropdown listagem de débitos-->
-        <div class="col mb-3 ml-0 w-auto h-auto">
+        <div class="col mb-3 w-auto h-auto">
 
                 <p  class="mb-3" style="max-height: 24px" align="Left">
-                    <button class="btn btn-secondary ml-0 norounded border-dark bg-dark" style="width: fit-content; height: auto" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-secondary ml-0 border-white border-dark bg-dark" style="width: fit-content; height: auto" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                         Listagem de Débitos
                     </button>
                 </p>
@@ -217,9 +202,9 @@ $list = new \Include\clientmodule\CRUD_logic();
             <div class="collapse container-fluid" id="collapseExample2">
 
                 <!-- card da listagem -->
-                <div class=" container-fluid card card-body norounded bg-dark mt-1" style="min-width: 550px;">
+                <div class=" container-fluid card card-body border-white bg-dark mt-1" style="min-width: 550px;">
 
-                    <table class="table table-hover text-white border-white text-center">
+                    <table class="table table-hover text-primary border-white text-center">
 
                         <tr>
                             <th>Cliente</th>
