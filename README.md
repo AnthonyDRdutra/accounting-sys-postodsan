@@ -5,6 +5,9 @@ On WIP project, capable of registering new customers and creating debit tickets 
     
 On WIP features: 
 - Daily cash accounting forms and registry.
+  
 - Contractors registry and monthly reports.
-- Monthly finance reports. 
+  
+- Monthly finance reports.
+  
     
