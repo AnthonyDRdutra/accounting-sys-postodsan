@@ -6,7 +6,7 @@ use PDO;
 
 class CRUD_logic
 {
-    private string $pdo_setup = ("mysql:dbname=dbpostodsan;host=localhost:3306");
+    private string $pdo_setup = ("mysql:dbname=yourdbname;host=yourhostaddress");
 
     private const login = [
         'default_username' => "root",
